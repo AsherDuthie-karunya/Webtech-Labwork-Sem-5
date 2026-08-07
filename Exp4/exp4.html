@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ex.No 04 - Webpage Design Using Advanced CSS3</title>
+<meta charset="UTF-8">
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #222;
+  }
+
+  header {
+    background-color: #4a6fa5;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  main {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+  }
+
+  section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+  }
+
+  section h2 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: #4a6fa5;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+  }
+
+  section p.note {
+    font-size: 13.5px;
+    color: #666;
+    margin: 8px 0 16px;
+  }
+
+  .demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+
+  /* 1. Rounded Corners */
+  .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .box2 {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border-radius: 15px 50px 30px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* 2. Border Image */
+  .borderimg {
+    width: 150px;
+    height: 100px;
+    border: 15px solid transparent;
+    border-image: url(images/border.png) 30 round;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .borderimg2 {
+    width: 150px;
+    height: 100px;
+    border: 15px solid transparent;
+    border-image: url(images/border.png) 30 stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* 3. Multiple Backgrounds */
+  #example1 {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background-image: url(images/img_flwr.gif), url(images/paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+  }
+
+  /* 4. Background Size */
+  #div1 {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background: url(images/img_flower.jpg);
+    background-size: 100px 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* 5. Pseudo classes */
+  form.demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 260px;
+  }
+
+  form.demo-form label {
+    font-size: 13px;
+  }
+
+  input {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  input:focus {
+    border: 3px solid red;
+    background-color: #eaffea;
+  }
+
+  input:required {
+    border-left: 4px solid #4a6fa5;
+  }
+
+  input[type="email"]:invalid {
+    color: red;
+  }
+
+  input[type="email"]:valid {
+    color: green;
+  }
+
+  /* 6. Adjacent sibling */
+  .itemrow {
+    border-collapse: collapse;
+  }
+
+  .itemrow td {
+    border: 1px solid #ddd;
+    padding: 10px 16px;
+    vertical-align: middle;
+  }
+
+  .itemName {
+    font-weight: bold;
+  }
+
+  .itemImg {
+    width: 60px;
+    background-color: orange;
+    opacity: 0.2;
+  }
+
+  .itemImg::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 60px;
+  }
+
+  .itemName:hover ~ .itemImg {
+    opacity: 1;
+  }
+
+  /* 7. nth-child odd/even */
+  table.zebra {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table.zebra th {
+    text-align: left;
+    background-color: #4a6fa5;
+    color: white;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  table.zebra td {
+    padding: 8px 12px;
+    font-size: 13.5px;
+    border-bottom: 1px solid #eee;
+  }
+
+  table.zebra tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  table.zebra tr:nth-child(even) {
+    background-color: #d9edf7;
+  }
+
+  table.zebra tr:hover {
+    background-color: yellow;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Webpage Design Using Advanced CSS3</h1>
+  <p>Ex.No 04 &nbsp;|&nbsp; HTML5 + Advanced CSS3 Properties</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>1. Rounded Corners</h2>
+    <p class="note">Using border-radius with one value and with four values.</p>
+    <div class="demo">
+      <div class="box1">25px</div>
+      <div class="box2">15/50/30/5</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Border Image</h2>
+    <p class="note">Using border-image with round and stretch repeat styles.</p>
+    <div class="demo">
+      <div class="borderimg">round</div>
+      <div class="borderimg2">stretch</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Multiple Backgrounds</h2>
+    <p class="note">Two background images stacked using comma-separated background-image.</p>
+    <div class="demo">
+      <div id="example1"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Background Size</h2>
+    <p class="note">A background image resized using background-size: 100px 80px.</p>
+    <div class="demo">
+      <div id="div1"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Pseudo Classes</h2>
+    <p class="note">Click into the name field for :focus. Type in the email field to see :invalid turn to :valid.</p>
+    <div class="demo">
+      <form class="demo-form" onsubmit="return false;">
+        <label>Name (required)</label>
+        <input type="text" required placeholder="Enter your name">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com">
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Adjacent Sibling Selector</h2>
+    <p class="note">Hover over "item1" to reveal its adjacent sibling image.</p>
+    <div class="demo">
+      <table class="itemrow">
+        <tr>
+          <td class="itemName">item1</td>
+          <td class="itemImg"></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Odd/Even Rows with Hover</h2>
+    <p class="note">Rows alternate color using nth-child(odd) / nth-child(even), and highlight on hover.</p>
+    <table class="zebra">
+      <tr><th>Roll No</th><th>Student</th><th>Marks</th></tr>
+      <tr><td>21CS01</td><td>Arun Kumar</td><td>92</td></tr>
+      <tr><td>21CS02</td><td>Divya Sri</td><td>88</td></tr>
+      <tr><td>21CS03</td><td>Karthik R</td><td>95</td></tr>
+      <tr><td>21CS04</td><td>Meena V</td><td>81</td></tr>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>
